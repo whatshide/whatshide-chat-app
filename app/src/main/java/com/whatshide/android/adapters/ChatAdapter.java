@@ -66,13 +66,13 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.myViewHolder> 
     @Override
     public ChatAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if(viewType == MSG_TYPE_LEFT){
-            View v = LayoutInflater.from(context).inflate(R.layout.left_chat,null,false);
+            View v = LayoutInflater.from(context).inflate(R.layout.left_chat,parent,false);
             return new ChatAdapter.myViewHolder(v);
         }else if(viewType == MSG_TYPE_RIGHT){
             View v = LayoutInflater.from(context).inflate(R.layout.right_chat,null,false);
             return new ChatAdapter.myViewHolder(v);
         }else if(viewType == MSG_TYPE_LEFT_IMAGE){
-            View v = LayoutInflater.from(context).inflate(R.layout.left_image_chat_layout,null,false);
+            View v = LayoutInflater.from(context).inflate(R.layout.left_image_chat_layout,parent,false);
             return new ChatAdapter.myViewHolder(v);
         }else {
             View v = LayoutInflater.from(context).inflate(R.layout.right_image_chat_layout,null,false);
@@ -130,9 +130,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.myViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(chat.getImage_url() != null){
-                    imageMessageListener.onImageMessageClicked(chat);
-                }
+
                 if(selectionMode){
                     if (!chat.isSelected()) {
                         messageListener.onMessageSelect(chat);
@@ -141,6 +139,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.myViewHolder> 
                     }
                     chat.setSelected(!chat.isSelected());
                     notifyItemChanged(position);
+                }else{
+                    if(chat.getImage_url() != null){
+                        imageMessageListener.onImageMessageClicked(chat);
+                    }
                 }
             }
         });

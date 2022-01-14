@@ -7,6 +7,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightGreen">#E9FFD8</color>
     <color name="colorCream">#ECE5DD</color>
-    <color name="colorMessageHighlight">#7A03A9F4</color>
+    <color name="colorMessageHighlight">#3703A9F4</color>
+    <color name="colorLightGreenBg">#146FFF00</color>
 
 </resources>

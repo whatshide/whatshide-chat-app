@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="20dp"
+    android:background="@drawable/chat_bg"
     xmlns:app="http://schemas.android.com/apk/res-tools"
     xmlns:app1="http://schemas.android.com/apk/res-auto">
     <LinearLayout

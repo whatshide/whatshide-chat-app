@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:paddingEnd="30dp"
+    android:background="@drawable/chat_bg"
     android:layout_height="match_parent">
 
     <LinearLayout
